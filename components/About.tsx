@@ -50,15 +50,31 @@ export default function About() {
           {features.map((feature, index) => (
             <motion.div
               key={feature.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="p-8 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 hover:shadow-lg transition-all duration-300 border border-white/20"
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                delay: index * 0.15,
+                duration: 0.6,
+                ease: "easeOut",
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+                transition: { duration: 0.3 },
+              }}
+              className="p-8 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 hover:shadow-2xl transition-all duration-300 border border-white/20 cursor-pointer"
             >
-              <div className="w-12 h-12 bg-blue-500/30 rounded-lg flex items-center justify-center mb-6 text-blue-200">
+              <motion.div
+                className="w-12 h-12 bg-blue-500/30 rounded-lg flex items-center justify-center mb-6 text-blue-200"
+                whileHover={{
+                  rotate: [0, -10, 10, -10, 0],
+                  scale: 1.1,
+                  transition: { duration: 0.5 },
+                }}
+              >
                 <feature.icon size={24} />
-              </div>
+              </motion.div>
               <h3 className="text-xl font-bold text-white mb-4">{feature.name}</h3>
               <p className="text-gray-200 leading-relaxed">
                 {feature.description}

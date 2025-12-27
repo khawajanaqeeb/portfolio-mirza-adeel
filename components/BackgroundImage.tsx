@@ -1,12 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface BackgroundImageProps {
   src: string;
   alt: string;
   priority?: boolean;
   className?: string;
+  objectPosition?: string;
+  animate?: boolean;
 }
 
 // Simple blur data URL for placeholder
@@ -34,9 +37,33 @@ export default function BackgroundImage({
   alt,
   priority = false,
   className = "",
+  objectPosition = "center",
+  animate = false,
 }: BackgroundImageProps) {
+  const ImageWrapper = animate ? motion.div : "div";
+
+  const animationProps = animate
+    ? {
+        initial: { scale: 1 },
+        animate: {
+          scale: [1, 1.05, 1],
+          x: [0, -10, 0],
+          y: [0, -10, 0],
+        },
+        transition: {
+          duration: 20,
+          repeat: Infinity,
+          repeatType: "reverse" as const,
+          ease: "easeInOut",
+        },
+      }
+    : {};
+
   return (
-    <div className={`background-image-wrapper ${className}`}>
+    <ImageWrapper
+      className={`background-image-wrapper ${className}`}
+      {...animationProps}
+    >
       <Image
         src={src}
         alt={alt}
@@ -48,9 +75,9 @@ export default function BackgroundImage({
         sizes="100vw"
         style={{
           objectFit: "cover",
-          objectPosition: "center",
+          objectPosition: objectPosition,
         }}
       />
-    </div>
+    </ImageWrapper>
   );
 }

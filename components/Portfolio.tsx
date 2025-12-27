@@ -19,40 +19,157 @@ export default function Portfolio() {
         </motion.div>
 
         {/* Water Purification Systems Section */}
-        <div className="section">
-          <div className="half">
-            <div className="slideshow" style={{ height: '50vh' }}>
+        <motion.div
+          className="section"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <motion.div
+            className="half"
+            initial={{ opacity: 0, x: -50, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              duration: 0.4
+            }}
+          >
+            <motion.div
+              className="slideshow slideshow-2"
+              style={{ height: '70vh' }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.4, 0.25, 1]
+              }}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+            >
               {waterPurificationImages.map((src, index) => (
-                <img key={index} src={src} alt={`Water Purification ${index + 1}`} className="image-half-screen" />
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Water Purification ${index + 1}`}
+                  style={{ height: '70vh', width: '100%', objectFit: 'contain' }}
+                />
               ))}
-            </div>
-          </div>
-          <div className="half">
-            <h3 className="text-2xl font-bold text-white mb-4">💧 Smart Water Purification</h3>
-            <p className="text-gray-200 leading-relaxed mb-6">
+            </motion.div>
+          </motion.div>
+          <motion.div
+            className="half"
+            initial={{ opacity: 0, x: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              delay: 0.2,
+              duration: 0.4
+            }}
+          >
+            <motion.h3
+              className="text-2xl font-bold text-white mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.4 }}
+            >
+              💧 Smart Water Purification
+            </motion.h3>
+            <motion.p
+              className="text-gray-200 leading-relaxed mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+            >
               Intelligent water purification systems engineered for sustainability,
               efficiency, and real-time monitoring using smart control frameworks.
-            </p>
-          </div>
-        </div>
+            </motion.p>
+          </motion.div>
+        </motion.div>
 
         {/* Real Estate Solutions Section */}
-        <div className="section">
-          <div className="half">
-            <h3 className="text-2xl font-bold text-white mb-4">🏢 AI-Driven Real Estate Automation</h3>
-            <p className="text-gray-200 leading-relaxed mb-6">
+        <motion.div
+          className="section"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <motion.div
+            className="half"
+            initial={{ opacity: 0, x: -50, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              duration: 0.4
+            }}
+          >
+            <motion.h3
+              className="text-2xl font-bold text-white mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+            >
+              🏢 AI-Driven Real Estate Automation
+            </motion.h3>
+            <motion.p
+              className="text-gray-200 leading-relaxed mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.4 }}
+            >
               Smart real estate solutions for monitoring, analytics, and predictive
               maintenance—built for modern infrastructure.
-            </p>
-          </div>
-          <div className="half">
-            <img
+            </motion.p>
+          </motion.div>
+          <motion.div
+            className="half"
+            initial={{ opacity: 0, x: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              delay: 0.2,
+              duration: 0.4
+            }}
+          >
+            <motion.img
               src="/pm1.jpg"
               alt="Real Estate Solution"
-              className="image-half-screen rounded-2xl shadow-lg"
+              className="rounded-2xl shadow-lg"
+              style={{ height: '70vh', width: '100%', objectFit: 'contain' }}
+              initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.4, 0.25, 1]
+              }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

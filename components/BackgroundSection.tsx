@@ -9,6 +9,8 @@ interface BackgroundSectionProps {
   className?: string;
   priority?: boolean;
   minHeight?: string;
+  objectPosition?: string;
+  animate?: boolean;
 }
 
 export default function BackgroundSection({
@@ -18,6 +20,8 @@ export default function BackgroundSection({
   className = "",
   priority = false,
   minHeight = "100vh",
+  objectPosition = "center",
+  animate = false,
 }: BackgroundSectionProps) {
   return (
     <section
@@ -28,6 +32,8 @@ export default function BackgroundSection({
         src={backgroundImage}
         alt="Background"
         priority={priority}
+        objectPosition={objectPosition}
+        animate={animate}
       />
       <div
         className="background-overlay"

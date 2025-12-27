@@ -9,9 +9,10 @@ export default function AboutPage() {
       <Navbar />
       <BackgroundSection
         backgroundImage="/adl1.png"
-        overlayOpacity={0.6}
+        overlayOpacity={0.7}
         priority={true}
         className="pt-16"
+        objectPosition="50% 15%"
       >
         <About />
       </BackgroundSection>

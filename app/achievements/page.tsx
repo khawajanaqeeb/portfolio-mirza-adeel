@@ -9,8 +9,10 @@ export default function AchievementsPage() {
       <Navbar />
       <BackgroundSection
         backgroundImage="/adl1.png"
-        overlayOpacity={0.65}
+        overlayOpacity={0.7}
+        priority={true}
         className="pt-16"
+        objectPosition="50% 15%"
       >
         <Achievements />
       </BackgroundSection>

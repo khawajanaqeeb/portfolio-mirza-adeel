@@ -10,7 +10,9 @@ export default function SkillsPage() {
       <BackgroundSection
         backgroundImage="/adl2.jpeg"
         overlayOpacity={0.7}
+        priority={true}
         className="pt-16"
+        objectPosition="50% 15%"
       >
         <Skills />
       </BackgroundSection>

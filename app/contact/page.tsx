@@ -10,7 +10,9 @@ export default function ContactPage() {
       <BackgroundSection
         backgroundImage="/addo.png"
         overlayOpacity={0.7}
+        priority={true}
         className="pt-16"
+        objectPosition="50% 15%"
       >
         <Contact />
       </BackgroundSection>
