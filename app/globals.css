@@ -10,6 +10,24 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Professional Navy Blue Palette Overrides */
+  --color-blue-50: #F4F7FB;
+  --color-blue-100: #E3EBF6;
+  --color-blue-200: #C4D6ED;
+  --color-blue-300: #9AB8DF;
+  --color-blue-400: #6B94CF;
+  --color-blue-500: #4672B8;
+  --color-blue-600: #2C5282; /* Deep Navy - Primary Action */
+  --color-blue-700: #2A4365; /* Darker Navy */
+  --color-blue-800: #1A365D; /* Deepest Navy */
+  --color-blue-900: #152542; /* Almost Black Blue */
+  --color-blue-950: #0D1626;
+
+  /* Optional: Gold Accent replacing Yellow */
+  --color-yellow-100: #FFF9C4;
+  --color-yellow-500: #FBC02D;
+  --color-yellow-600: #F57F17;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +41,150 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= Full Screen Layout Utilities ================= */
+.fullscreen-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.fullscreen-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Section Support */
+.background-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.background-image-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.background-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= Layout ================= */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 90px 0;
+  gap: 2rem; /* Adjusted gap */
+}
+.half {
+  flex: 1;
+  min-width: 0; /* Prevents flex child from overflowing */
+  width: 50%;   /* Fallback/Target */
+}
+
+/* ================= Slideshow (Fade) ================= */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+}
+.slideshow img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 28s infinite ease-in-out;
+}
+
+/* ================= Sliding Marquee ================= */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: slide 20s linear infinite;
+  gap: 2rem;
+}
+
+.marquee-content img {
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ================= Timing ================= */
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 4s; }
+.slideshow img:nth-child(3) { animation-delay: 8s; }
+.slideshow img:nth-child(4) { animation-delay: 12s; }
+.slideshow img:nth-child(5) { animation-delay: 16s; }
+.slideshow img:nth-child(6) { animation-delay: 20s; }
+.slideshow img:nth-child(7) { animation-delay: 24s; }
+.slideshow img:nth-child(8) { animation-delay: 28s; }
+@keyframes fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  35%  { opacity: 1; }
+  45%  { opacity: 0; }
+  100% { opacity: 0; } /* Ensure it ends at 0 for smooth transition */
+}
+/* ================= Image Sizing Utilities ================= */
+.image-half-screen {
+  height: 50vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.image-half-screen-contain {
+  height: 50vh;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+  .section {
+    flex-direction: column;
+  }
+  .half {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-half-screen {
+    height: 40vh; /* Smaller on mobile */
+  }
+  .image-half-screen-contain {
+    height: 40vh;
+  }
 }
