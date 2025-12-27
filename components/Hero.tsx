@@ -22,7 +22,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };
@@ -34,7 +34,7 @@ const buttonVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
   hover: {
@@ -54,7 +54,7 @@ const letterVariants = {
     rotateX: 0,
     transition: {
       duration: 0.8,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
     },
   },
 };
@@ -67,7 +67,7 @@ const wordVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };
@@ -164,7 +164,7 @@ export default function Hero() {
                 className="h-1 bg-gradient-to-r from-blue-400 via-blue-500 to-transparent rounded-full mt-2"
                 initial={{ width: 0, opacity: 0 }}
                 animate={{ width: "100%", opacity: 1 }}
-                transition={{ delay: 2, duration: 1, ease: "easeOut" }}
+                transition={{ delay: 2, duration: 1, ease: "easeOut" as const }}
               />
             </div>
 
@@ -172,7 +172,7 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.8, duration: 0.8, ease: "easeOut" }}
+              transition={{ delay: 1.8, duration: 0.8, ease: "easeOut" as const }}
               className="mt-8 text-lg leading-relaxed max-w-lg"
             >
               <motion.span

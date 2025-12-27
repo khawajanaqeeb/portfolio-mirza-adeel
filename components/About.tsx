@@ -56,7 +56,7 @@ export default function About() {
               transition={{
                 delay: index * 0.15,
                 duration: 0.6,
-                ease: "easeOut",
+                ease: "easeOut" as const,
               }}
               whileHover={{
                 y: -10,

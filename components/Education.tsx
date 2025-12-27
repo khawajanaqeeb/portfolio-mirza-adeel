@@ -69,7 +69,7 @@ export default function Education() {
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: "easeOut" as const }}
             style={{ transformOrigin: "top" }}
           >
             {education.map((item, index) => (

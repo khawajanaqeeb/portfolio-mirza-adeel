@@ -40,30 +40,43 @@ export default function BackgroundImage({
   objectPosition = "center",
   animate = false,
 }: BackgroundImageProps) {
-  const ImageWrapper = animate ? motion.div : "div";
-
-  const animationProps = animate
-    ? {
-        initial: { scale: 1 },
-        animate: {
+  if (animate) {
+    return (
+      <motion.div
+        className={`background-image-wrapper ${className}`}
+        initial={{ scale: 1 }}
+        animate={{
           scale: [1, 1.05, 1],
           x: [0, -10, 0],
           y: [0, -10, 0],
-        },
-        transition: {
+        }}
+        transition={{
           duration: 20,
           repeat: Infinity,
           repeatType: "reverse" as const,
-          ease: "easeInOut",
-        },
-      }
-    : {};
+          ease: "easeInOut" as const,
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={priority}
+          quality={75}
+          placeholder="blur"
+          blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(1920, 1080))}`}
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: objectPosition,
+          }}
+        />
+      </motion.div>
+    );
+  }
 
   return (
-    <ImageWrapper
-      className={`background-image-wrapper ${className}`}
-      {...animationProps}
-    >
+    <div className={`background-image-wrapper ${className}`}>
       <Image
         src={src}
         alt={alt}
@@ -78,6 +91,6 @@ export default function BackgroundImage({
           objectPosition: objectPosition,
         }}
       />
-    </ImageWrapper>
+    </div>
   );
 }
