@@ -4,23 +4,23 @@ import { motion } from "framer-motion";
 
 const skills = [
   {
-    title: "Proven Leadership",
-    description: "Ability to inspire teams toward shared goals in diverse environments.",
+    title: "Client Relationship Management",
+    description: "Building and maintaining strong relationships with clients in real estate and water purification sectors.",
     color: "bg-blue-500",
   },
   {
-    title: "Excellent Communication",
-    description: "Skilled at conveying complex ideas clearly and effectively across multiple channels.",
+    title: "Market Analysis & Strategy",
+    description: "Expert in identifying market trends, competitive positioning, and growth opportunities for property sales and water solutions.",
     color: "bg-green-500",
   },
   {
-    title: "Strategic Thinking",
-    description: "Focused on developing actionable plans and initiatives for long-term success.",
+    title: "Negotiation & Deal Closing",
+    description: "Proven track record of successful negotiations and closing high-value real estate and water purification contracts.",
     color: "bg-purple-500",
   },
   {
-    title: "Strong Analytical Skills",
-    description: "Expertise in data analysis to drive performance improvements and informed decisions.",
+    title: "Sales & Marketing Expertise",
+    description: "Comprehensive experience in developing marketing campaigns and sales strategies for real estate and water purification products.",
     color: "bg-orange-500",
   },
 ];

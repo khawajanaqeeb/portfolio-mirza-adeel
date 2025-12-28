@@ -83,7 +83,7 @@ export default function Portfolio() {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.4 }}
             >
-              💧 Smart Water Purification
+              💧 Water Purification Solutions
             </motion.h3>
             <motion.p
               className="text-gray-200 leading-relaxed mb-6"
@@ -92,8 +92,8 @@ export default function Portfolio() {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.4 }}
             >
-              Intelligent water purification systems engineered for sustainability,
-              efficiency, and real-time monitoring using smart control frameworks.
+              Delivering premium water purification systems for residential and commercial clients.
+              Specialized in market development, product demonstrations, and customer education.
             </motion.p>
           </motion.div>
         </motion.div>
@@ -125,7 +125,7 @@ export default function Portfolio() {
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.4 }}
             >
-              🏢 AI-Driven Real Estate Automation
+              🏢 Real Estate Sales & Marketing Excellence
             </motion.h3>
             <motion.p
               className="text-gray-200 leading-relaxed mb-6"
@@ -134,8 +134,8 @@ export default function Portfolio() {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.4 }}
             >
-              Smart real estate solutions for monitoring, analytics, and predictive
-              maintenance—built for modern infrastructure.
+              Strategic marketing and sales solutions for residential and commercial properties.
+              Expertise in market analysis, client relationship management, and deal closing.
             </motion.p>
           </motion.div>
           <motion.div

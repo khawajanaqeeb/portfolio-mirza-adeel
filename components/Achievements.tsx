@@ -103,8 +103,8 @@ export default function Achievements() {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.4 }}
             >
-              Recognized for innovation, research excellence, and impactful technology
-              solutions across AI, robotics, and automation domains.
+              Recognized for outstanding performance in real estate sales and water purification
+              market development, with proven success in client acquisition and revenue growth.
             </motion.p>
             <motion.ul
               className="list-disc list-inside space-y-2 text-gray-200"
@@ -113,7 +113,7 @@ export default function Achievements() {
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.4 }}
             >
-              {["Global AI & Robotics Awards", "Certified Research Excellence", "Industry-Leading Innovation"].map((item, index) => (
+              {["Top Sales Performance Awards", "Excellence in Customer Service", "Market Leadership Recognition"].map((item, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, x: -20 }}

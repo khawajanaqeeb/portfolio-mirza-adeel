@@ -72,8 +72,8 @@ export default function Clients() {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.4 }}
             >
-              Delivered scalable solutions for enterprises, startups, and research labs
-              worldwide—focused on reliability, performance, and innovation.
+              Successfully partnered with property developers, homeowners, and businesses
+              to deliver exceptional real estate services and water purification solutions.
             </motion.p>
             <motion.ul
               className="list-disc list-inside space-y-2"
@@ -82,7 +82,7 @@ export default function Clients() {
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.4 }}
             >
-              {["Enterprise AI Systems", "Robotics & Automation", "Custom Engineering Solutions"].map((item, index) => (
+              {["Residential & Commercial Real Estate", "Water Purification Systems", "Property Marketing & Sales"].map((item, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
